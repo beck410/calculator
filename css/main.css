@@ -1,0 +1,10 @@
+span{
+  width:200px;
+  height:25px;
+  background:#fdfdfd;
+  display:inline-block;
+}
+div{
+  padding:20px;
+  background:silver;
+}

@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="../bower_components/mocha/mocha.css">
   </head>
   <body>
-    <div id="mocha"></div>
-
+    <div id="mocha">
+      <div class='mocha-fixture hidden'>
+      <div class='calculator'>
+        <span class='display'></span>
+        <input type='button' value='1' class='1'></input>
+        <input type='button' value='2' class='2'></input>
+        <input type='button' value='3' class='3'></input>
+        <input type='button' value='4' class='4'></input>
+        <input type='button' value='5' class='5'></input>
+        <input type='button' value='6' class='6'></input>
+        <input type='button' value='7' class='7'></input>
+        <input type='button' value='8' class='8'></input>
+        <input type='button' value='9' class='9'></input>
+        <input type='button' value='0' class='0'></input>
+        <input type='button' value='.' class='.'></input>
+        <input type='button' value='+' class='+'></input>
+        <input type='button' value='-' class='-'></input>
+        <input type='button' value='/' class='/'></input>
+        <input type='button' value='*' class='*'></input>
+        <input type='button' value='=' class='='></input>
+      </div></div>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/mocha/mocha.js"></script>
     <script>mocha.setup('bdd');</script>
     <!-- http://mochajs.org/#interfaces -->
@@ -24,6 +45,7 @@
     </script>
 
     <!-- include source files here... -->
+
     <script src='../js/main.js'></script>
     <!-- include spec files here... -->
     <script src="test.js"></script>
