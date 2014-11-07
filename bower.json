@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "0.0.0",
+  "homepage": "https://github.com/beck410/calculator",
+  "authors": [
+    "(Alex Story)(Beck Cronin-Dixon)"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chai": "~1.9.2",
+    "jquery": "~2.1.1",
+    "mocha": "~2.0.1"
+  }
+}
