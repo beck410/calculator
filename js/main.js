@@ -1,6 +1,6 @@
 $().ready(function(){
   calc.display = function(arg){
-    if(arg){
+    if(arg !== undefined){
       return $('.display').text(arg);
     }else {
       return $('.display').text();
@@ -16,9 +16,8 @@ $().ready(function(){
     operator: '+',
     status: false,
     display: '',
-    strip: function(num){
-      return(parseFloat(num.toPrecision(4)));
-    },
+    lastNumber: "",
+    lastOperator: "",
 
     press: function(input){
       if(isNaN(+input) === false || input === '.'){
@@ -26,17 +25,18 @@ $().ready(function(){
           return;
         }
         if(calc.status === true){
-          calc.display(' ');
+          calc.display('');
           calc.status = false;
         }
         calc.display(calc.display() + input);
       } else{
-        if(input === 'CE'){
-          calc.display(' ');
+        if(calc.status === true  && input !== '='){
+          calc.operator = input;
+          return
         }
-        if (calc.display().charAt(calc.display().length-1) === '.'){
-          return;
-        }else{
+        else if(input === 'CE'){
+          calc.display(' ');
+        } else {
         switch(calc.operator){
           case '+':
             calc.total = +calc.total + +calc.display();
@@ -64,11 +64,31 @@ $().ready(function(){
               case '/':
                 calc.total = +calc.total / +calc.display();
                 break;
+              case '=':
+                switch(calc.lastOperator){
+                  case '+':
+                    calc.total = +calc.total + +calc.lastNumber;
+                    break;
+                  case '-':
+                    calc.total = +calc.total - +calc.lastNumber;
+                    break;
+                  case '*':
+                    calc.total = +calc.total * +calc.lastNumber;
+                    break;
+                  case '/':
+                    calc.total = +calc.total / +calc.lastNumber;
+                    break;
+                  }
+                  calc.display(calc.total);
+                  return;
+                break;
               };
             break;
           };
-        calc.display(String(calc.total));
+        calc.lastNumber = calc.display();
+        calc.display(calc.total);
         calc.status = true;
+        calc.lastOperator = calc.operator;
         calc.operator = input;
         };
       }
