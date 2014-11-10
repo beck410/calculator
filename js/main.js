@@ -36,7 +36,13 @@ $().ready(function(){
         }
         else if(input === 'CE'){
           calc.display(' ');
-        } else {
+        } else if(input === '+/-'){
+          if(calc.display().charAt(0) !== "-"){
+            calc.display("-"+calc.display());
+          } else {
+            calc.display(Math.abs(calc.display()));
+          }
+        }else {
         switch(calc.operator){
           case '+':
             calc.total = +calc.total + +calc.display();

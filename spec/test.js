@@ -136,7 +136,54 @@ describe('chaining', function(){
     calc.press('=');
   assert.equal(calc.display(), '7')
   })
+})
 
+describe('plus/minus toggle', function(){
+  beforeEach(function(){
+    $('.display').text('');
+    calc.total = 0;
+    calc.operator='+';
+  })
+
+  it('should turn 4 to -4', function(){
+    calc.press('4');
+    calc.press('+/-')
+    assert.equal(calc.display(), '-4')
+  })
+
+  it('should turn -8 to 8', function(){
+    calc.press('-8');
+    calc.press('+/-')
+    assert.equal(calc.display(),'8')
+  })
+
+  it('should equal -5', function(){
+    calc.press('5');
+    calc.press('+');
+    calc.press('10');
+    calc.press('+/-');
+    calc.press('=');
+    assert.equal(calc.display(),'-5')
+  })
+
+  it('should equal 100', function(){
+    calc.press('10');
+    calc.press('+/-');
+    calc.press('*');
+    calc.press('10');
+    calc.press('+/-');
+    calc.press('=');
+    assert.equal(calc.display(),'100')
+  })
+
+  it('should equal -100', function(){
+    calc.press('10');
+    calc.press('*');
+    calc.press('10');
+    calc.press('+/-');
+    calc.press('=');
+    assert.equal(calc.display(),'-100')
+  })
 })
 
 describe('unintended uses', function(){

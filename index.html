@@ -7,25 +7,32 @@
     <link rel="stylesheet" href="css/main.css"><title>Calculator</title>
   </head>
   <body>
-    <div class='calculator'>
+    <div class='calculator cf'>
       <span class='display'></span>
-      <input type='button' value='1' class='1'></input>
-      <input type='button' value='2' class='2'></input>
-      <input type='button' value='3' class='3'></input>
-      <input type='button' value='4' class='4'></input>
-      <input type='button' value='5' class='5'></input>
-      <input type='button' value='6' class='6'></input>
-      <input type='button' value='7' class='7'></input>
-      <input type='button' value='8' class='8'></input>
-      <input type='button' value='9' class='9'></input>
-      <input type='button' value='0' class='0'></input>
-      <input type='button' value='.' class='.'></input>
-      <input type='button' value='CE' class='CE'></input>
-      <input type='button' value='+' class='+'></input>
-      <input type='button' value='-' class='-'></input>
-      <input type='button' value='/' class='/'></input>
-      <input type='button' value='*' class='*'></input>
-      <input type='button' value='=' class='='></input>
+      <div class = "calc-buttons cf">
+        <div class="number-buttons">
+          <input type='button' value='1' class='1 button'></input>
+          <input type='button' value='2' class='2 button'></input>
+          <input type='button' value='3' class='3 button'></input>
+          <input type='button' value='4' class='4 button'></input>
+          <input type='button' value='5' class='5 button'></input>
+          <input type='button' value='6' class='6 button'></input>
+          <input type='button' value='7' class='7 button'></input>
+          <input type='button' value='8' class='8 button'></input>
+          <input type='button' value='9' class='9 button'></input>
+          <input type='button' value='0' class='0 button'></input>
+          <input type='button' value='.' class='dot button'></input>
+          <input type='button' value='+/-' class='plus-minus button'></input>
+        </div>
+        <div class="operator-buttons">
+          <input type='button' value='CE' class='clear button'></input>
+          <input type='button' value='+' class='plus button'></input>
+          <input type='button' value='-' class='subtract button'></input>
+          <input type='button' value='/' class='division button'></input>
+          <input type='button' value='*' class='times button'></input>
+        </div>
+        <input type='button' value='=' class='equal button'></input>
+      </div>
     </div>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src='js/main.js'></script>
