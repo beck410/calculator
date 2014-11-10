@@ -6,11 +6,14 @@ $().ready(function(){
       return $('.display').text();
     }
   }
+  $('input[type="button"]').click(function(){
+    calc.press($(this).val())
+  })
 })
   var calc = {
 
-    total: 0,
-    operator: '',
+    total: '',
+    operator: '+',
     status: false,
     display: '',
     strip: function(num){
@@ -28,10 +31,13 @@ $().ready(function(){
         }
         calc.display(calc.display() + input);
       } else{
+        if(input === 'CE'){
+          calc.display(' ');
+        }
         if (calc.display().charAt(calc.display().length-1) === '.'){
           return;
         }else{
-        switch(input){
+        switch(calc.operator){
           case '+':
             calc.total = +calc.total + +calc.display();
             break;
@@ -61,7 +67,7 @@ $().ready(function(){
               };
             break;
           };
-        calc.total;
+        calc.display(String(calc.total));
         calc.status = true;
         calc.operator = input;
         };
