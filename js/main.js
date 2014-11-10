@@ -30,12 +30,11 @@ $().ready(function(){
         }
         calc.display(calc.display() + input);
       } else{
-        if(calc.status === true  && input !== '='){
+        if(input === 'CE'){
+          calc.display(' ');
+        } else if(calc.status === true  && input !== '='){
           calc.operator = input;
           return
-        }
-        else if(input === 'CE'){
-          calc.display(' ');
         } else if(input === '+/-'){
           if(calc.display().charAt(0) !== "-"){
             calc.display("-"+calc.display());
@@ -86,6 +85,8 @@ $().ready(function(){
                     break;
                   }
                   calc.display(calc.total);
+                  calc.status = true;
+
                   return;
                 break;
               };
