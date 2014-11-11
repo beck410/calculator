@@ -3,7 +3,8 @@
 }
 
 body {
-  background: #ecf0f1;
+  background: url('../desk-background.jpg');
+  background-size: cover;
 }
 
 .display{
@@ -27,7 +28,7 @@ body {
   background: #ccc;
   text-align: center;
   border-radius: 20px;
-  box-shadow:darkgrey 5px 5px 5px;
+  box-shadow: #222 5px 5px 5px;
 }
 
 .calc-buttons {
