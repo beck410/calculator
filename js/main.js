@@ -36,11 +36,12 @@ $().ready(function(){
         calc.display(calc.display() + input);
       } else{
         if(input === 'CE'){
-          calc.display('');
+          calc.display('0');
+          calc.status= true;
         }if(input === 'C'){
-          calc.display('');
+          calc.display('0');
           calc.total = '';
-          calc.status = false;
+          calc.status = truee;
           calc.lastNumber = '';
           calc.lastOperator = '';
           calc.operator = '+';
