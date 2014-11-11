@@ -41,7 +41,7 @@ $().ready(function(){
         }if(input === 'C'){
           calc.display('0');
           calc.total = '';
-          calc.status = truee;
+          calc.status = true;
           calc.lastNumber = '';
           calc.lastOperator = '';
           calc.operator = '+';
