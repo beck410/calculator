@@ -9,12 +9,14 @@ $().ready(function(){
   $('input[type="button"]').click(function(){
     calc.press($(this).val())
   })
+
+  calc.display(0);
 })
   var calc = {
 
     total: '',
     operator: '+',
-    status: false,
+    status: true,
     display: '',
     lastNumber: "",
     lastOperator: "",
