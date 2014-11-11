@@ -2,13 +2,17 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #ecf0f1;
+}
+
 .display{
   font-family:VT323;
   font-size:1.5em;
   line-height:1;
   width:87.5%;
   height:50px;
-  background:#fdfdfd;
+  background:#9EB;
   display:block;
   margin: 10px auto;
   padding: 10px 0;
@@ -19,7 +23,7 @@
   width: 50%;
   min-width: 400px;
   padding: 10px 5px 30px 5px;
-  margin: 0 auto;
+  margin: 40px auto;
   background: #ccc;
   text-align: center;
   border-radius: 20px;
