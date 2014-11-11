@@ -31,7 +31,14 @@ $().ready(function(){
         calc.display(calc.display() + input);
       } else{
         if(input === 'CE'){
-          calc.display(' ');
+          calc.display('');
+        }if(input === 'C'){
+          calc.display('');
+          calc.total = '';
+          calc.status = false;
+          calc.lastNumber = '';
+          calc.lastOperator = '';
+          calc.operator = '+';
         } else if(calc.status === true  && input !== '='){
           calc.operator = input;
           return
