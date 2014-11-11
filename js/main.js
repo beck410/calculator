@@ -9,6 +9,9 @@ $().ready(function(){
   $('input[type="button"]').click(function(){
     calc.press($(this).val())
   })
+  $('.on').click(function(){
+    $('.display').css('background', '#9EB')
+  })
 
   calc.display(0);
 })

@@ -7,13 +7,22 @@ body {
   background-size: cover;
 }
 
+.on {
+  text-align:left;
+  padding:15px;
+  border-radius:100%;
+  float:left;
+  margin-left:10%;
+  background:darkgrey;
+}
+
 .display{
   font-family:VT323;
   font-size:1.5em;
   line-height:1;
   width:87.5%;
   height:50px;
-  background:#9EB;
+  background:#000;
   display:block;
   margin: 10px auto;
   padding: 10px 0;
@@ -34,6 +43,7 @@ body {
 .calc-buttons {
   width: 87.5%;
   margin: 0 auto;
+  clear:left;
 }
 
 .number-buttons .button {
