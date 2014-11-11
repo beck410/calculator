@@ -39,19 +39,20 @@ $().ready(function(){
           calc.lastNumber = '';
           calc.lastOperator = '';
           calc.operator = '+';
-        } else if(calc.status === true  && input !== '='){
-          calc.operator = input;
-          return
         } else if(input === '+/-'){
           if(calc.display().charAt(0) !== "-"){
             calc.display("-"+calc.display());
           } else {
             calc.display(Math.abs(calc.display()));
           }
+          calc.total *= -1;
+        } else if(calc.status === true  && input !== '='){
+          calc.operator = input;
+          return
         }else {
         switch(calc.operator){
           case '+':
-            calc.total = +calc.total + +calc.display();
+            calc.total = +((+(+calc.total * 1000000000000) + +(+calc.display() * 1000000000000))/1000000000000);
             break;
           case '-':
             calc.total = +calc.total - +calc.display();
