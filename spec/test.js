@@ -3,7 +3,7 @@ describe('addition', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -25,7 +25,7 @@ describe('subtraction', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -43,7 +43,7 @@ describe('display multiple numbers', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   });
 
@@ -57,8 +57,7 @@ describe('display multiple numbers', function(){
 describe('multiplication', function(){
 
   beforeEach(function(){
-    $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -85,7 +84,7 @@ describe('chaining', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -141,7 +140,7 @@ describe('chaining', function(){
 describe('plus/minus toggle', function(){
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -190,7 +189,7 @@ describe('unintended uses', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -215,7 +214,7 @@ describe('floating points', function(){
 
   beforeEach(function(){
     $('.display').text('');
-    calc.total = 0;
+    calc.total = new Decimal(0);
     calc.operator='+';
   })
 
@@ -226,6 +225,6 @@ describe('floating points', function(){
     calc.press('.');
     calc.press('2');
     calc.press('=');
-    assert.equal(calc.display(), '.3');
+    assert.equal(calc.display(), '0.3');
   })
 })

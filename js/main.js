@@ -17,7 +17,7 @@ $().ready(function(){
 })
   var calc = {
 
-    total: '',
+    total: new Decimal(0),
     operator: '+',
     status: true,
     display: '',
@@ -51,52 +51,76 @@ $().ready(function(){
           } else {
             calc.display(Math.abs(calc.display()));
           }
-          calc.total *= -1;
+          //calc.total *= -1;
         } else if(calc.status === true  && input !== '='){
           calc.operator = input;
           return
         }else {
         switch(calc.operator){
           case '+':
-            calc.total = +((+(+calc.total * 1000000000000) + +(+calc.display() * 1000000000000))/1000000000000);
+            var decimalDisplay = new Decimal(calc.display());
+            var decimalTotal = new Decimal(calc.total)
+            calc.total = decimalTotal.plus(decimalDisplay);
             break;
           case '-':
-            calc.total = +calc.total - +calc.display();
+            var decimalDisplay = new Decimal(calc.display());
+            var decimalTotal = new Decimal(calc.total)
+            calc.total = decimalTotal.minus(decimalDisplay);
             break;
           case '*':
-            calc.total = +calc.total * +calc.display();
+            var decimalDisplay = new Decimal(calc.display());
+            var decimalTotal = new Decimal(calc.total)
+            calc.total = decimalTotal.times(decimalDisplay);
             break;
           case '/':
-            calc.total = +calc.total / +calc.display();
+            var decimalDisplay = new Decimal(calc.display());
+            var decimalTotal = new Decimal(calc.total)
+            calc.total = decimalTotal.dividedBy(decimalDisplay);
             break;
           case '=':
             switch(calc.operator){
               case '+':
-                calc.total = +calc.total + +calc.display();
+                var decimalDisplay = new Decimal(calc.display());
+                var decimalTotal = new Decimal(calc.total)
+                calc.total = decimalTotal.plus(decimalDisplay);
                 break;
               case '-':
-                calc.total = +calc.total - +calc.display();
+                var decimalDisplay = new Decimal(calc.display());
+                var decimalTotal = new Decimal(calc.total)
+                calc.total = decimalTotal.minus(decimalDisplay);
                 break;
               case '*':
-                calc.total = +calc.total * +calc.display();
+                var decimalDisplay = new Decimal(calc.display());
+                var decimalTotal = new Decimal(calc.total)
+                calc.total = decimalTotal.times(decimalDisplay);
                 break;
               case '/':
-                calc.total = +calc.total / +calc.display();
+                var decimalDisplay = new Decimal(calc.display());
+                var decimalTotal = new Decimal(calc.total)
+                calc.total = decimalTotal.dividedBy(decimalDisplay);
                 break;
               case '=':
                 switch(calc.lastOperator){
                   case '+':
-                    calc.total = +calc.total + +calc.lastNumber;
-                    break;
-                  case '-':
-                    calc.total = +calc.total - +calc.lastNumber;
-                    break;
-                  case '*':
-                    calc.total = +calc.total * +calc.lastNumber;
-                    break;
-                  case '/':
-                    calc.total = +calc.total / +calc.lastNumber;
-                    break;
+                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalTotal = new Decimal(calc.total)
+                      calc.total = decimalTotal.plus(decimalDisplay);
+                      break;
+                    case '-':
+                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalTotal = new Decimal(calc.total)
+                      calc.total = decimalTotal.minus(decimalDisplay);
+                      break;
+                    case '*':
+                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalTotal = new Decimal(calc.total)
+                      calc.total = decimalTotal.times(decimalDisplay);
+                      break;
+                    case '/':
+                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalTotal = new Decimal(calc.total)
+                      calc.total = decimalTotal.dividedBy(decimalDisplay);
+                      break;
                   }
                   calc.display(calc.total);
                   calc.status = true;
