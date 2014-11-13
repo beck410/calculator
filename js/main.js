@@ -47,9 +47,9 @@ $().ready(function(){
           calc.operator = '+';
         } else if(input === '+/-'){
           if(calc.display().charAt(0) !== "-"){
-            calc.display("-"+calc.display());
+            calc.display( "-"+new Decimal(calc.display()) );
           } else {
-            calc.display(Math.abs(calc.display()));
+            calc.display(Math.abs( new Decimal(calc.display())));
           }
           calc.total *= -1;
         } else if(calc.status === true  && input !== '='){
