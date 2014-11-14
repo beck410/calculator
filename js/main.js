@@ -51,7 +51,6 @@ $().ready(function(){
           } else {
             calc.display(Math.abs(calc.display()));
           }
-          //calc.total *= -1;
         } else if(calc.status === true  && input !== '='){
           calc.operator = input;
           return
@@ -102,22 +101,22 @@ $().ready(function(){
               case '=':
                 switch(calc.lastOperator){
                   case '+':
-                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalDisplay = new Decimal(calc.lastNumber);
                       var decimalTotal = new Decimal(calc.total)
                       calc.total = decimalTotal.plus(decimalDisplay);
                       break;
                     case '-':
-                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalDisplay = new Decimal(calc.lastNumber);
                       var decimalTotal = new Decimal(calc.total)
                       calc.total = decimalTotal.minus(decimalDisplay);
                       break;
                     case '*':
-                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalDisplay = new Decimal(calc.lastNumber);
                       var decimalTotal = new Decimal(calc.total)
                       calc.total = decimalTotal.times(decimalDisplay);
                       break;
                     case '/':
-                      var decimalDisplay = new Decimal(calc.display());
+                      var decimalDisplay = new Decimal(calc.lastNumber);
                       var decimalTotal = new Decimal(calc.total)
                       calc.total = decimalTotal.dividedBy(decimalDisplay);
                       break;
@@ -130,7 +129,7 @@ $().ready(function(){
               };
             break;
           };
-        calc.lastNumber = calc.display();
+        calc.lastNumber = new Decimal(calc.display());
         calc.display(calc.total);
         calc.status = true;
         calc.lastOperator = calc.operator;
